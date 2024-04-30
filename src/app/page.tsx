@@ -7,17 +7,9 @@ import { useState } from 'react';
 import Link from "next/link";
 
 const HomePage = () => {
-    const [isSidebarOpen, setSidebarOpen] = useState(true);  // Sidebar is open by default
-
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-    };
 
     return (
         <div className="flex">
-            <Sidebar onToggle={toggleSidebar} isOpen={isSidebarOpen} />
-            <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-16'}`}>
-           
                 <Image
                     src={bgImage}
                     fill
@@ -44,7 +36,6 @@ const HomePage = () => {
                         </div>
                     </div>
                 </main>
-            </div>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 "use client"
 
-import Link from 'next/link';
 import { useState } from 'react';
+import Link from 'next/link';
 import { FiMenu, FiChevronRight, FiChevronDown } from 'react-icons/fi';
 import { RxDot } from "react-icons/rx";
 
@@ -34,21 +34,26 @@ const navItems: NavItem[] = [
     { label: 'Contact', path: '/home' },
 ];
 
-interface SidebarProps {
-    onToggle: () => void;
-    isOpen: boolean;
-}
+type SidebarProps = {
+    onToggle: (isOpen: boolean) => void;
+};
 
-const Sidebar = ({ onToggle, isOpen }: SidebarProps) => {
+const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
+    const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState<number | null>(null);
 
-    const handleToggle = (index: number) => {
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
+        onToggle(!isOpen);  // Notify parent component
+    };
+
+    const handleSelect = (index: number) => {
         setSelected(selected === index ? null : index);
     };
 
     return (
         <div className={`fixed top-0 left-0 h-full bg-teal-950 text-white transition-all duration-300 ease-linear ${isOpen ? 'w-64' : 'w-16'}`}>
-            <button className="absolute top-0 right-0 p-4 text-xl text-white" onClick={onToggle}>
+            <button className="absolute top-0 right-0 p-4 text-xl text-white" onClick={handleToggle}>
                 <FiMenu />
             </button>
             <div className={isOpen ? 'block' : 'hidden'}>
@@ -56,7 +61,7 @@ const Sidebar = ({ onToggle, isOpen }: SidebarProps) => {
                     <div key={index}>
                         {item.path || item.alwaysShow || item.subNav ? (
                             <Link href={item.path ?? '#'}>
-                                <div onClick={() => handleToggle(index)} className="flex items-center p-3 hover:bg-teal-900 cursor-pointer">
+                                <div onClick={() => handleSelect(index)} className="flex items-center p-3 hover:bg-teal-900 cursor-pointer">
                                     {item.subNav ? (selected === index ? <FiChevronDown className="mr-2" /> : <FiChevronRight className="mr-2" />) : null}
                                     {item.label}
                                 </div>
@@ -79,3 +84,4 @@ const Sidebar = ({ onToggle, isOpen }: SidebarProps) => {
 };
 
 export default Sidebar;
+

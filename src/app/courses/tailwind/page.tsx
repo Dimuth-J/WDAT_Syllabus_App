@@ -1,23 +1,14 @@
 "use client"
 
 
-import Sidebar from '../../sidebar/page';
+// import Sidebar from '../../sidebar/page';
 import { useState } from 'react';
 import Quiz from "../../quiz/page"
 
 const HomePage = () => {
-    const [isSidebarOpen, setSidebarOpen] = useState(true);  // Sidebar is open by default
-
-    const toggleSidebar = () => {
-        setSidebarOpen(!isSidebarOpen);
-    };
 
     return (
-        <div className="flex">
-            <Sidebar onToggle={toggleSidebar} isOpen={isSidebarOpen} />
-            <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-16'}`}>
-
-            <main className="p-8">
+        <div className="">
                     <div className="w-full h-full grid grid-cols-[1fr_10fr_1fr]">
                         <div className=""></div>
                         <div className="">
@@ -55,8 +46,6 @@ const HomePage = () => {
                         <div className=""></div>
                     </div>
 
-                </main>
-            </div>
         </div>
     );
 };
