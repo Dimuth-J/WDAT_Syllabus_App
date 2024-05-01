@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiChevronRight, FiChevronDown } from 'react-icons/fi';
 import { RxDot } from "react-icons/rx";
@@ -38,7 +38,7 @@ type SidebarProps = {
     onToggle: (isOpen: boolean) => void;
 };
 
-const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
+const Sidebar: FC<SidebarProps> = ({ onToggle }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState<number | null>(null);
 
@@ -70,8 +70,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
                         {selected === index && item.subNav && (
                             <div className="pl-8">
                                 {item.subNav.map((subItem, subIndex) => (
-                                    <Link href={subItem.path || '#'} key={subIndex} className='flex items-center p-1 hover:bg-teal-900 cursor-pointer'>
-                                        <RxDot className="mr-2" />{subItem.label}
+                                    <Link href={subItem.path || '#'} key={subIndex}>
+                                        <div className='flex items-center p-1 hover:bg-teal-900 cursor-pointer'>
+                                            <RxDot className="mr-2" />{subItem.label}
+                                        </div>
                                     </Link>
                                 ))}
                             </div>
@@ -81,9 +83,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
             </div>
         </div>
     );
-    
-    
 };
 
 export default Sidebar;
-
