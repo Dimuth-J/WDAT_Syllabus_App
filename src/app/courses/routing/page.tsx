@@ -26,10 +26,10 @@ const HomePage = () => {
                         and URL management straightforward and integrated.</p>
                     </div>
     
-                    <div className="w-full h-auto h px-4 md:px-10">
+                    <div className="w-full h-auto px-4 md:px-10">
                         <div className="mt-8 ">
                             <iframe 
-                                className=' w-full h-56 md:h-full rounded-lg' 
+                                className=' w-full h-60 md:h-96 rounded-lg' 
                                 src="https://www.youtube.com/embed/Vm7qM1wmXwE" 
                                 title="YouTube video player" 
                                 frameBorder="0" 
