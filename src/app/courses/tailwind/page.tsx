@@ -19,8 +19,8 @@ const HomePage = () => {
                         <h1 className="text-3xl font-bold underline">Routing in Next.js</h1>
                     </div>
                     <div className="text-pretty text-justify mt-10 font-serif text-lg px-4 md:px-0">
-                        <p>Styling in Next.js using Tailwind CSS involves integrating the utility-first CSS framework 
-                        to design responsive and modern web interfaces efficiently. Tailwind's approach focuses on using utility 
+                    <p>Styling in Next.js using Tailwind CSS involves integrating the utility-first CSS framework 
+                        to design responsive and modern web interfaces efficiently. Tailwind&apos;s approach focuses on using utility 
                         classes directly in HTML or JSX, allowing for rapid prototyping and design without writing custom CSS. 
                         To integrate Tailwind with Next.js, you install Tailwind via npm, configure it in the tailwind.config.js 
                         file, and include its base, components, and utilities styles in your global CSS. This setup enables 
