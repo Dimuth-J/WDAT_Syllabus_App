@@ -56,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
             <button className="absolute top-0 right-0 p-4 text-xl text-white" onClick={handleToggle}>
                 <FiMenu />
             </button>
-            <div className={isOpen ? 'block' : 'hidden'}>
+            <div className={`${isOpen ? 'block' : 'hidden'}`}>
                 {navItems.map((item, index) => (
                     <div key={index}>
                         {item.path || item.alwaysShow || item.subNav ? (
@@ -81,6 +81,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggle }) => {
             </div>
         </div>
     );
+    
+    
 };
 
 export default Sidebar;

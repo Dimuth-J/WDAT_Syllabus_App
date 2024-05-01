@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <Sidebar onToggle={handleToggle} />
-            <div className={`flex-1 p-10 transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-16'}`}>
+            <div className={`flex-1 p-3 md:p-10 transition-all duration-300 ${isOpen ? 'ml-64' : 'ml-16'}`}>
                 <main>
                     {children}
                     
