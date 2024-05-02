@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import bgImage from "../../public/assert/images/bg1.png";
-import Sidebar from './sidebar/page';
+import Sidebar from './navbar/page';
 import { useState } from 'react';
 import Link from "next/link";
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import bgImage from "../../../public/assert/images/bg1.png";
+import Slider from "../slideshow/page"
 // import Sidebar from '../sidebar/page';
 import { useState } from 'react';
 import Link from "next/link";
@@ -9,13 +10,13 @@ import Link from "next/link";
 const HomePage = () => {
     return (
         <div className="">
-            <Image
+            {/* <Image
                 src={bgImage}
                 fill
                 alt="bg-image"
-                className="absolute inset-0 w-full h-full object-cover opacity-100 z-[-10]"
-            />
-            
+                className="absolute inset-0 w-full h-full  opacity-100 z-[-10]"
+            /> */}
+            <Slider/>
             <div className="w-full h-full grid grid-cols-2">
                 <div className="">
                     <h1 className="font-bold text-5xl ">Next Js</h1>

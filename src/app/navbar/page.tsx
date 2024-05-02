@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FiMenu, FiArrowDownCircle, FiLogOut,FiChevronRight } from "react-icons/fi";
+import { FiMenu, FiChevronDown, FiLogOut, FiChevronRight } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
-// import Mylogo from "@/assets/images/Mylogo.png";
+import Mylogo from "../../../public/assert/images/Logo.png";
 
 type NavItem = {
   label: string;
@@ -17,23 +17,15 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     label: "Web",
-    link: "/web",
+    link: "",
     children: [
       {
         label: "NextJs 14",
-        link: "/nextjs",
+        link: "/test",
       },
       {
-        label: "TypeScript",
-        link: "/typescript",
-      },
-      {
-        label: "Auth0 Integration",
-        link: "/auth0-integration",
-      },
-      {
-        label: "Stripe",
-        link: "/stripepayments",
+        label: "Courses",
+        link: "/coursesLandingPage",
       },
     ],
   },
@@ -95,23 +87,24 @@ export default function Navbar() {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-7xl justify-between px-4 py-5 text-sm">
+    <div className="mx-auto z-10 flex w-full  justify-between px-4 py-1 text-sm  shadow-md">
       <section className="flex items-center gap-10">
         <Link href="/">
-            {/* <Image src={Mylogo} alt="logo" width={112} height={56} /> */}
-            </Link>
+          <Image src={Mylogo} alt="logo" width={50} height={15} className="hover:scale-125 transition duration-300" />
+        </Link>
         <div className="hidden md:flex items-center gap-4">
           {navItems.map((item, index) => (
             <div key={index} className="group relative">
-              <Link href={item.link ?? "#"} className="flex items-center px-2 py-3 transition duration-200 ease-in-out hover:text-blue-500">
+              <Link href={item.link ?? "#"} className="flex items-center px-2 py-3 transition duration-200 ease-in-out hover:text-teal-700 hover:scale-125">
                 <span>{item.label}</span>
-                {item.children && <FiArrowDownCircle className="ml-2" />}
+                {item.children && <FiChevronDown className="ml-2" />}
               </Link>
               {item.children && (
-                <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md rounded-lg py-3 left-2 top-full group-hover:transition group-hover:duration-1000">
+                <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md rounded-lg py-3 left-0 top-full group-hover:transition group-hover:duration-1000">
                   {item.children.map((child, childIndex) => (
-                    <Link key={childIndex} href={child.link ?? "#"} className="px-6 py-1 transition duration-500 ease-in-out hover:bg-gray-100">
-                      {child.label}
+                    <Link key={childIndex} href={child.link ?? "#"} className="flex items-center px-5 py-1 transition duration-300 ease-in-out hover:bg-gray-100">
+                      <span className="mr-2">{child.label.split(' ')[0]}</span>
+                      <span>{child.label.split(' ')[1]}</span> 
                     </Link>
                   ))}
                 </div>
@@ -122,9 +115,9 @@ export default function Navbar() {
       </section>
 
       <div className="flex items-center">
-        <Link href="/api/auth/logout" className="flex items-center gap-2 text-neutral-700 hover:text-blue-500 transition duration-200 ease-in-out">
+        <Link href="/api/auth/logout" className="flex items-center gap-2 text-neutral-700 hover:text-teal-700 transition duration-200 ease-in-out hover:scale-110 ">
           <FiLogOut className="text-lg" />
-          <span>Logout</span>
+          <span>Login</span>
         </Link>
         <FiMenu onClick={toggleSideMenu} className="cursor-pointer text-4xl md:hidden ml-4" />
       </div>

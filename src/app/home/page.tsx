@@ -1,9 +1,13 @@
-import Header from '../sidebar/page';
+"use client"
+
+import Header from '../navbar/page';
+import Slider from '../slideshow/page'
 
 const Home = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
+            <Slider/>
             <main>
                 <div className="text-justify mt-4">
                     <p>HTTP GET requests are used to retrieve information from a server. They are commonly used in web
