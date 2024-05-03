@@ -24,7 +24,7 @@ const Slideshow: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative w-full max-w-screen-xxl mx-auto overflow-hidden z-0">
+        <div className="-z-10 relative w-full max-w-screen-xxl mx-auto overflow-hidden">
             <div className="flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${current * 100}%)` }}>
                 {slides.map((slide, index) => (
                     <div key={index} className="flex-none w-full h-96" style={{ backgroundImage: `url(${slide.imageUrl})`, backgroundSize: 'cover' }}>
@@ -32,12 +32,12 @@ const Slideshow: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white stroke stroke-black text-5xl cursor-pointer z-10">
+            {/* <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white stroke stroke-black text-5xl cursor-pointer">
                 <span onClick={() => setCurrent((current - 1 + slides.length) % slides.length)}>&laquo;</span>
             </div>
-            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white stroke stroke-black text-5xl cursor-pointer z-10">
+            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white stroke stroke-black text-5xl cursor-pointer">
                 <span onClick={() => setCurrent((current + 1) % slides.length)}>&raquo;</span>
-            </div>
+            </div> */}
         </div>
     );
 };

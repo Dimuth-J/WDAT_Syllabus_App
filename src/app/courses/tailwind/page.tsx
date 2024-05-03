@@ -4,6 +4,8 @@
 // import Sidebar from '../../sidebar/page';
 import { useState } from 'react';
 import Quiz from "../../quiz/page"
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import Link from 'next/link';
 
 const HomePage = () => {
 
@@ -11,12 +13,27 @@ const HomePage = () => {
         <div className="">
             <div className="w-full h-full grid grid-cols-1 md:grid-cols-[1fr_10fr_1fr]">
                 {/* Empty div for spacing on larger screens */}
-                <div className=""></div>
+                <div className="">
+                    <div className=' grid-rows-1 flex items-center justify-start'>
+                        <div className='grid grid-cols-2 shadow-md gap-5'>
+                            <Link href='./manageHTTTPMethods'>
+                                <div className=' text-2xl hover:scale-125 cursor-pointer'>
+                                    <FiChevronLeft />
+                                </div>
+                            </Link>
+                            {/* <Link href='./manageHTTTPMethods'>
+                                <div className=' text-2xl hover:scale-125 cursor-pointer'>
+                                    <FiChevronRight />
+                                </div>
+                            </Link> */}
+                        </div>
+                    </div>
+                </div>
                 
                 {/* Main content area */}
                 <div className="">
                     <div className="flex justify-center items-center">
-                        <h1 className="text-3xl font-bold underline">Routing in Next.js</h1>
+                        <h1 className="text-3xl font-bold underline">Tailwind CSS in Next.js</h1>
                     </div>
                     <div className="text-pretty text-justify mt-10 font-serif text-lg px-4 md:px-0">
                     <p>Styling in Next.js using Tailwind CSS involves integrating the utility-first CSS framework 

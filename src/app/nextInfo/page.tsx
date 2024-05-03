@@ -11,7 +11,7 @@ const HomePage = () => {
                 <div className=""></div>
                 <div className="">
                     <div className="flex justify-center items-center">
-                        <h1 className=" text-3xl font-bold underline">Why we Learn Next Js</h1>
+                        <h1 className=" text-3xl font-bold underline text-center">Why we Learn Next Js</h1>
                     </div>
                     <div className=" text-pretty text-justify mt-10 font-serif text-lg">
                         <p className="">Next.js is a popular framework built on top of Node.js, designed to enhance
@@ -19,7 +19,7 @@ const HomePage = () => {
                         development and production challenges:</p>
                     </div>
 
-                    <div className=" px-10">
+                    <div className=" md:px-10">
                         <div className=" text-pretty text-start mt-7">
                             <h1 className=" font-semibold">Server-Side Rendering (SSR):</h1>
                             <p className=" text-justify text-wrap font-serif">Next.js allows React components to be rendered on the server, improving the initial
